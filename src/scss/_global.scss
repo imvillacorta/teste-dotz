@@ -1,0 +1,18 @@
+@font-face {
+    font-family: "San Francisco";
+    src: url("../assets/fonts/SF-UI-Display-Regular.otf");
+}
+
+body {
+    font-family: "San Francisco";
+    background: $background;
+}
+
+ //CONTAINER PRA CONTEUDO DE FORMS
+ .container-wrap{
+    background: $branco;
+    margin: 15px;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  }

@@ -1,1 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
+// VARIAVEIS DO SISTEMA
+@import 'scss/variables.scss';
+
+// COMPONENTES DE TERCEIROS COM ESTILIZAÇÃO CUSTOMIZADA
+@import 'scss/custom';
+
+// ESTILOS USADOS PARA TODO O SISTEMA
+@import 'scss/global';
