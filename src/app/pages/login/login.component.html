@@ -6,7 +6,8 @@
                      alt="Dotz">
             </div>
             <div class="content">
-                <form [formGroup]="form"
+                <form name="form"
+                      [formGroup]="form"
                       (ngSubmit)="onSubmit()">
                     <h4>Login</h4>
                     <h6>Olá informe seu e-mail para acessar sua conta.</h6>
@@ -36,7 +37,8 @@
             </div>
         </div>
         <div class="login mt-3 text-center">
-            <span>Não tem conta? <a href="" routerLink="/auto-cadastro">Cadastre-se</a> </span>
+            <span>Não tem conta? <a href=""
+                   routerLink="/auto-cadastro">Cadastre-se</a> </span>
         </div>
     </div>
 </div>

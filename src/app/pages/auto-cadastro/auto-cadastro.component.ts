@@ -80,7 +80,6 @@ export class AutoCadastroComponent implements OnInit {
     this.submitted = true;
 
     if (this.form.status == 'INVALID') {
-      console.log(this.form);
     }
 
     else {
@@ -107,7 +106,6 @@ export class AutoCadastroComponent implements OnInit {
             }
           });
         }, error => {
-          console.log(error);
         })
     }
   }
