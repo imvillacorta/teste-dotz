@@ -1,0 +1,74 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "nome": "Ivan Villacorta",
+      "cpf": "39293316838",
+      "email": "ivan_mv23@hotmail.com",
+      "saldo": "99000",
+      "endereco": [
+        {
+          "cep": "02211050",
+          "rua": "Rua Igarai",
+          "numero": "212",
+          "complemento": "Casa",
+          "bairro": "Vila Guilherme",
+          "cidade": "São Paulo",
+          "estado": "SP"
+        }
+      ],
+      "produtos": [
+        {
+          "id": 1,
+          "produto": "Monitor",
+          "preco": "1500",
+          "dataCompra": "2021-05-22T20:56:52.675Z"
+        },
+        {
+          "id": 2,
+          "produto": "Mouse",
+          "preco": "200",
+          "dataCompra": "2021-05-22T20:56:52.675Z"
+        }
+      ]
+    },
+    {
+      "nome": "Alberto de Lima",
+      "cpf": "39293316845",
+      "email": "alberto@gmail.com",
+      "saldo": 0,
+      "endereco": [
+        {
+          "cep": "02211050",
+          "rua": "Rua Larga",
+          "numero": "23",
+          "complemento": "CASA B",
+          "bairro": "Vila Matilde",
+          "cidade": "São Paulo",
+          "estado": "SP"
+        }
+      ],
+      "produtos": [],
+      "id": 2
+    },
+    {
+      "nome": "Geovana Zanco",
+      "cpf": "39293316831",
+      "email": "geovana@hotmail.com",
+      "saldo": 0,
+      "endereco": [
+        {
+          "cep": "02211456",
+          "rua": "Rua Curta",
+          "numero": "154",
+          "complemento": "",
+          "bairro": "Fontales",
+          "cidade": "São Paulo",
+          "estado": "SP"
+        }
+      ],
+      "produtos": [],
+      "id": 3
+    }
+  ]
+}

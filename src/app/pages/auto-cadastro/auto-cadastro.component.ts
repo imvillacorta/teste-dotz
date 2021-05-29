@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import Swal from 'sweetalert2';
+import { UsuarioService } from "src/app/services/usuario/usuario.service";
 
 @Component({
   selector: 'app-auto-cadastro',
@@ -16,21 +17,22 @@ export class AutoCadastroComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private router: Router
+    private router: Router,
+    private usuarioService: UsuarioService
   ) { }
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
-      nome: [null, Validators.required],
-      cpf: [null, Validators.required],
-      email: [null, [Validators.required, Validators.email]],
-      cep: [null, Validators.required],
-      endereco: [null, Validators.required],
-      numero: [null],
-      complemento: [null],
-      bairro: [null, Validators.required],
-      cidade: [null, Validators.required],
-      estado: [null, Validators.required]
+      nome: ['', Validators.required],
+      cpf: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      cep: ['', Validators.required],
+      endereco: ['', Validators.required],
+      numero: [''],
+      complemento: [''],
+      bairro: ['', Validators.required],
+      cidade: ['', Validators.required],
+      estado: ['', Validators.required]
     });
   }
 
@@ -82,27 +84,31 @@ export class AutoCadastroComponent implements OnInit {
     }
 
     else {
-      Swal.fire({
-        icon: 'success',
-        title: 'Conta Criada',
-        text: "Sua conta foi gerada com sucesso.",
-        confirmButtonText: 'ENTENDI',
-        confirmButtonColor: '#f29433',
-        allowOutsideClick: false,
-        customClass: {
-          confirmButton: 'btn-alert'
-        }
-      }).then((result) => {
-        if (result.dismiss) {
-        } else {
-          this.submitted = false;
-          this.form.reset();
-          this.router.navigate(['login']);
-        }
-      });
 
+      this.usuarioService
+        .criar(this.form)
+        .subscribe(resp => {
+          Swal.fire({
+            icon: 'success',
+            title: 'Conta Criada',
+            text: "Sua conta foi gerada com sucesso.",
+            confirmButtonText: 'ENTENDI',
+            confirmButtonColor: '#f29433',
+            allowOutsideClick: false,
+            customClass: {
+              confirmButton: 'btn-alert'
+            }
+          }).then((result) => {
+            if (result.dismiss) {
+            } else {
+              this.submitted = false;
+              this.form.reset();
+              this.router.navigate(['login']);
+            }
+          });
+        }, error => {
+          console.log(error);
+        })
     }
-
   }
-
 }
