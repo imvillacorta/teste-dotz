@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { LoginComponent } from "./pages/login/login.component";
+import { AutoCadastroComponent } from "./pages/auto-cadastro/auto-cadastro.component";
 
 const routes: Routes = [
   {
@@ -11,6 +12,10 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
+  },
+  {
+    path: 'auto-cadastro',
+    component: AutoCadastroComponent,
   },
 ];
 
