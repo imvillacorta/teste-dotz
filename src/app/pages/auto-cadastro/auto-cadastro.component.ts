@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-auto-cadastro',
@@ -13,6 +16,7 @@ export class AutoCadastroComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -77,11 +81,27 @@ export class AutoCadastroComponent implements OnInit {
       console.log(this.form);
     }
 
-    // else {
-    //   this.submitted = false;
-    //   this.form.reset();
-    //   this.router.navigate(['pedidos']);
-    // }
+    else {
+      Swal.fire({
+        icon: 'success',
+        title: 'Conta Criada',
+        text: "Sua conta foi gerada com sucesso.",
+        confirmButtonText: 'ENTENDI',
+        confirmButtonColor: '#f29433',
+        allowOutsideClick: false,
+        customClass: {
+          confirmButton: 'btn-alert'
+        }
+      }).then((result) => {
+        if (result.dismiss) {
+        } else {
+          this.submitted = false;
+          this.form.reset();
+          this.router.navigate(['login']);
+        }
+      });
+
+    }
 
   }
 

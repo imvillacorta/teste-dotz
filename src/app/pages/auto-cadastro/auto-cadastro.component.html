@@ -26,6 +26,7 @@
                 <div *ngIf="nome?.invalid && (nome?.touched || submitted)">
                     <span *ngIf="nome?.errors?.required"
                           class="text-danger">Campo obrigatório</span>
+
                 </div>
             </div>
             <div class="col-md-4 col-sm-12 mb-3">
@@ -35,12 +36,15 @@
                        [class.is-invalid]="cpf?.invalid && (cpf?.touched || submitted)"
                        formControlName="cpf"
                        id="cpf"
+                       mask="000.000.000-00"
                        name="cpf"
                        placeholder="Ex: 000.000.000-00"
                        type="text" />
                 <div *ngIf="cpf?.invalid && (cpf?.touched || submitted)">
                     <span *ngIf="cpf?.errors?.required"
                           class="text-danger">Campo obrigatório</span>
+                    <span *ngIf="cpf?.errors?.mask"
+                          class="text-danger">Preencha corretamente o CPF</span>
                 </div>
             </div>
             <div class="col-md-4 col-sm-12">
@@ -77,12 +81,15 @@
                        [class.is-invalid]="cep?.invalid && (cep?.touched || submitted)"
                        formControlName="cep"
                        id="cep"
+                       mask="00000-000"
                        name="cep"
                        placeholder="Ex: 00000-000"
                        type="text" />
                 <div *ngIf="cep?.invalid && (cep?.touched || submitted)">
                     <span *ngIf="cep?.errors?.required"
                           class="text-danger">Campo obrigatório</span>
+                    <span *ngIf="cep?.errors?.mask"
+                          class="text-danger">Preencha corretamente o CEP</span>
                 </div>
             </div>
             <div class="col-md-8 col-sm-12 mb-3">
@@ -103,7 +110,10 @@
             <div class="col-md-2 col-sm-12 mb-3">
                 <label class="form-label"
                        for="numero">Número</label>
-                <input class="form-control"
+                <input [allowNegativeNumbers]="false"
+                       mask="separator"
+                       maxlength="4"
+                       class="form-control"
                        formControlName="numero"
                        id="numero"
                        name="numero"
@@ -149,7 +159,7 @@
                        formControlName="cidade"
                        id="cidade"
                        name="cidade"
-                       placeholder="Ex: Rua Igarai"
+                       placeholder="Ex: São Paulo"
                        type="text" />
                 <div *ngIf="cidade?.invalid && (cidade?.touched || submitted)">
                     <span *ngIf="cidade?.errors?.required"
