@@ -7,16 +7,21 @@ import { AppRoutingModule } from './app-routing.module';
 //MODULOS DE TERCEIROS
 import { NgxMaskModule, IConfig } from 'ngx-mask';
 
+//MODULOS INTERNOS
+import { ComponentsModule } from "./components/components.module";
+
 //COMPONENTES
 import { AppComponent } from './app.component';
 import { LoginComponent } from './pages/login/login.component';
 import { AutoCadastroComponent } from './pages/auto-cadastro/auto-cadastro.component';
+import { MeusPedidosComponent } from './pages/meus-pedidos/meus-pedidos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    AutoCadastroComponent
+    AutoCadastroComponent,
+    MeusPedidosComponent
   ],
   imports: [
     BrowserModule,
@@ -24,6 +29,7 @@ import { AutoCadastroComponent } from './pages/auto-cadastro/auto-cadastro.compo
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    ComponentsModule,
     NgxMaskModule.forRoot()
   ],
   providers: [],

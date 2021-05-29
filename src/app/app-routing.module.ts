@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { LoginComponent } from "./pages/login/login.component";
 import { AutoCadastroComponent } from "./pages/auto-cadastro/auto-cadastro.component";
+import { MeusPedidosComponent } from "./pages/meus-pedidos/meus-pedidos.component";
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path: 'auto-cadastro',
     component: AutoCadastroComponent,
+  },
+  {
+    path: 'meus-pedidos',
+    component: MeusPedidosComponent,
   },
 ];
 
