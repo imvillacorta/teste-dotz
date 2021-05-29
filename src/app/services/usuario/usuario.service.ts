@@ -18,7 +18,7 @@ export class UsuarioService {
         nome: usuario.value.nome,
         cpf: usuario.value.cpf,
         email: usuario.value.email,
-        saldo: 0,
+        saldo: 99000,
         endereco: [
           {
             cep: usuario.value.cep,

@@ -5,7 +5,7 @@
       "nome": "Ivan Villacorta",
       "cpf": "39293316838",
       "email": "ivan_mv23@hotmail.com",
-      "saldo": "99000",
+      "saldo": 99000,
       "endereco": [
         {
           "cep": "02211050",

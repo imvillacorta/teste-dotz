@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
 
+import { LoginService } from "src/app/services/login/login.service";
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -11,10 +13,12 @@ export class HeaderComponent implements OnInit {
 
   url: any;
   ocultarHeader: any;
+  public usuario: any;
 
   constructor(
     private router: Router,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private loginService: LoginService
   ) { }
 
   ngOnInit(): void {
@@ -33,6 +37,26 @@ export class HeaderComponent implements OnInit {
       }
 
     });
+
+    this.obterUsuario();
+  }
+
+  obterUsuario() {
+    this.loginService
+      .obterUsuarioPorId(localStorage.getItem('user'))
+      .subscribe(resp => {
+        this.usuario = resp;
+        console.log(this.usuario);
+      })
+  }
+
+  sair() {
+    localStorage.removeItem('user');
+    this.router.navigate(['/login']);
+  }
+
+  pedidos() {
+    this.router.navigate(['/meus-pedidos']);
   }
 
 }
