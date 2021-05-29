@@ -1,0 +1,18 @@
+.btn-primary {
+    background: $laranja;
+    border: 1px solid $laranja;
+    &:hover {
+        background: $amarelo-primario;
+        border: 1px solid $amarelo-secundario;
+    }
+
+    &:focus {
+        background: $laranja;
+        border: 1px solid $laranja;
+        box-shadow: none;
+    }
+}
+
+.form-control.is-invalid {
+    background-image: none;
+}

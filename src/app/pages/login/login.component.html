@@ -1,0 +1,42 @@
+<div class="bg vh-100">
+    <div class="wrapper vh-100">
+        <div class="login">
+            <div class="logo mb-1 text-center">
+                <img src="../../../assets/img/logo-dotz.png"
+                     alt="Dotz">
+            </div>
+            <div class="content">
+                <form [formGroup]="form"
+                      (ngSubmit)="onSubmit()">
+                    <h4>Login</h4>
+                    <h6>Olá informe seu e-mail para acessar sua conta.</h6>
+                    <div>
+                        <label class="form-label"
+                               for="login">Usuário</label>
+                        <input class="form-control"
+                               [class.is-invalid]="usuario?.invalid && (usuario?.touched || submitted)"
+                               formControlName="usuario"
+                               id="usuario"
+                               name="usuario"
+                               placeholder="Digite seu usuário de acesso"
+                               type="text" />
+                        <div *ngIf="usuario?.invalid && (usuario?.touched || submitted)">
+                            <span *ngIf="usuario?.errors?.required"
+                                  class="text-danger">Campo obrigatório</span>
+                            <span *ngIf="usuario?.errors?.email"
+                                  class="text-danger">E-mail inválido</span>
+                        </div>
+                    </div>
+                    <div class="mt-3 d-grid gap-2">
+                        <button class="btn btn-primary"
+                                type="submit">ACESSAR</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+        <div class="login mt-3 text-center">
+            <span>Não tem conta? <a href="">Cadastre-se</a> </span>
+        </div>
+    </div>
+</div>
