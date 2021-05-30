@@ -1,4 +1,48 @@
 {
+  "produtos": [
+    {
+      "id": 1,
+      "descricao": "Monitor Samsung Led 27 Polegadas",
+      "img": "assets/img/monitor.png",
+      "valor": 1500,
+      "setor": "informatica"
+    },
+    {
+      "id": 2,
+      "descricao": "Mouse Optico com fio",
+      "img": "assets/img/mouse.png",
+      "valor": 200,
+      "setor": "informatica"
+    },
+    {
+      "id": 3,
+      "descricao": "Notebook Gamer Dell",
+      "img": "assets/img/notebook.png",
+      "valor": 5000,
+      "setor": "informatica"
+    },
+    {
+      "id": 4,
+      "descricao": "Smart TV Samsung 55 Polegadas",
+      "img": "assets/img/tv.png",
+      "valor": 6000,
+      "setor": "eletros"
+    },
+    {
+      "id": 5,
+      "descricao": "Teclado Mecanico RGB",
+      "img": "assets/img/teclado.png",
+      "valor": 1000,
+      "setor": "informatica"
+    },
+    {
+      "id": 6,
+      "descricao": "Home Theater LG LHB645N Full HD com Blu-Ray 3D 1000W Bluetooth 5.1",
+      "img": "assets/img/home-theater.png",
+      "valor": 4000,
+      "setor": "eletros"
+    }
+  ],
   "usuarios": [
     {
       "id": 1,
@@ -20,13 +64,13 @@
       "produtos": [
         {
           "id": 1,
-          "produto": "Monitor",
+          "produto": "Monitor Samsung Led 27 Polegadas",
           "preco": 1500,
           "dataCompra": "2021-05-22T20:56:52.675Z"
         },
         {
           "id": 2,
-          "produto": "Mouse",
+          "produto": "Mouse Optico com fio",
           "preco": 200,
           "dataCompra": "2021-05-22T20:56:52.675Z"
         }
@@ -36,7 +80,7 @@
       "nome": "Alberto de Lima",
       "cpf": "39293316845",
       "email": "alberto@gmail.com",
-      "saldo": 0,
+      "saldo": 10000,
       "endereco": [
         {
           "cep": "02211050",
@@ -55,7 +99,7 @@
       "nome": "Geovana Zanco",
       "cpf": "39293316831",
       "email": "geovana@hotmail.com",
-      "saldo": 0,
+      "saldo": 10000,
       "endereco": [
         {
           "cep": "02211456",

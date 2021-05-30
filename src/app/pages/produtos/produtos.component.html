@@ -1,0 +1,36 @@
+<app-header [usuario]="usuario?.nome"
+            [saldo]="usuario?.saldo"></app-header>
+
+<div class="container">
+    <div class="container-wrap">
+        <div class="mb-3">
+            <h4 class="title">Produtos para Resgate</h4>
+            <h6>Escolha os produtos que deseja resgastar.</h6>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 col-sm-12 mb-3">
+                <div class="card-produto text-center">
+                    <div>
+                        <img src="../../../assets/img/monitor.png"
+                             alt="">
+                    </div>
+                    <span>
+                        Monitor Samsung Led 27 Polegadas
+                    </span>
+                    <div class="preco mt-4">
+                        DZ 1500
+                    </div>
+                    <div class="comprar cursor"
+                         (click)="resgatar()">
+                        Resgatar
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex justify-content-end me-3 mb-3">
+        <button class="btn btn-secondary"
+                routerLink="/meus-pedidos">Voltar</button>
+    </div>
+</div>

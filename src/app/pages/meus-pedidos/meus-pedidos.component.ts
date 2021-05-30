@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-
 import { LoginService } from "src/app/services/login/login.service";
 
 @Component({
@@ -19,7 +17,6 @@ export class MeusPedidosComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-
     this.obterUsuario();
   }
 

@@ -15,13 +15,15 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './pages/login/login.component';
 import { AutoCadastroComponent } from './pages/auto-cadastro/auto-cadastro.component';
 import { MeusPedidosComponent } from './pages/meus-pedidos/meus-pedidos.component';
+import { ProdutosComponent } from './pages/produtos/produtos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     AutoCadastroComponent,
-    MeusPedidosComponent
+    MeusPedidosComponent,
+    ProdutosComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,33 @@
+@import "../../../scss/variables";
+
+.card-produto {
+    background: $branco;
+    border: 1px solid $cinza-claro;
+    border-radius: 18px;
+    padding: 25px 0 0 0;
+
+    img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .preco,
+    .comprar {
+        color: $branco;
+        font-size: 1.5em;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        padding: 15px 0;
+    }
+
+    .preco {
+        background: $amarelo-primario;
+    }
+    .comprar {
+        background: $azul-escuro;
+        border-radius: 0 0 18px 18px;
+        &:hover {
+            background: #1e3564;
+        }
+    }
+}

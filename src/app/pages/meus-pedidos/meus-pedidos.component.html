@@ -9,8 +9,9 @@
                 <h6>Gerencie seus pedidos na lista abaixo.</h6>
             </div>
             <div>
-                <button type="button"
-                        class="btn btn-primary">
+                <button class="btn btn-primary"
+                        routerLink="/produtos"
+                        type="button">
                     + Resgatar Produtos
                 </button>
             </div>
@@ -32,7 +33,8 @@
                         <b>Valor:</b> {{pedido.preco}} dotz
                     </div>
                     <div>
-                        <b>Endereço:</b> {{ endereco[0].rua }}, {{ endereco[0].numero }} - {{ endereco[0].complemento }}
+                        <b>Endereço de Entrega:</b> {{ endereco[0].rua }}, {{ endereco[0].numero }} - {{
+                        endereco[0].complemento }}
                         - {{ endereco[0].bairro }}
                     </div>
                     <div class="alert alert-warning p-2 mt-2"
