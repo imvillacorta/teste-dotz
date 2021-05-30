@@ -9,20 +9,20 @@
         </div>
 
         <div class="row">
-            <div class="col-md-4 col-sm-12 mb-3">
+            <div class="col-md-4 col-sm-12 mb-3" *ngFor="let produto of produtos">
                 <div class="card-produto text-center">
-                    <div>
-                        <img src="../../../assets/img/monitor.png"
-                             alt="">
+                    <div class="mb-3">
+                        <img [src]="produto.img"
+                             [alt]="produto.descricao">
                     </div>
-                    <span>
-                        Monitor Samsung Led 27 Polegadas
-                    </span>
+                    <div class="descricao">
+                        {{ produto.descricao }}
+                    </div>
                     <div class="preco mt-4">
-                        DZ 1500
+                        DZ {{ produto.valor }}
                     </div>
                     <div class="comprar cursor"
-                         (click)="resgatar()">
+                         (click)="resgatar(produto)">
                         Resgatar
                     </div>
                 </div>

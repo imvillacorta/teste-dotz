@@ -25,7 +25,7 @@
       "id": 4,
       "descricao": "Smart TV Samsung 55 Polegadas",
       "img": "assets/img/tv.png",
-      "valor": 6000,
+      "valor": 10000,
       "setor": "eletros"
     },
     {
@@ -49,7 +49,7 @@
       "nome": "Ivan Villacorta",
       "cpf": "39293316838",
       "email": "ivan_mv23@hotmail.com",
-      "saldo": 8300,
+      "saldo": 8100,
       "endereco": [
         {
           "cep": "02211050",

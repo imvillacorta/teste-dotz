@@ -35,4 +35,9 @@ export class UsuarioService {
     );
   }
 
+  atualizar(id: any, infoUsuario: any) {
+    return this.http.put<any>(
+      `${environment.urlApi}/usuarios/${id}`, infoUsuario);
+  }
+
 }
