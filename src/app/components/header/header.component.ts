@@ -1,8 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
-import { filter } from 'rxjs/operators';
-
-import { LoginService } from "src/app/services/login/login.service";
+import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -11,43 +8,15 @@ import { LoginService } from "src/app/services/login/login.service";
 })
 export class HeaderComponent implements OnInit {
 
-  url: any;
-  ocultarHeader: any;
-  public usuario: any;
+  @Input() usuario: any;
+  @Input() saldo: any;
+
 
   constructor(
-    private router: Router,
-    private activatedRoute: ActivatedRoute,
-    private loginService: LoginService
+    private router: Router
   ) { }
 
   ngOnInit(): void {
-    this.router.events.pipe(
-      filter(event => event instanceof NavigationEnd)
-    ).subscribe(() => {
-      this.url = this.activatedRoute?.root?.snapshot?.firstChild?.routeConfig?.path;
-
-      if (this.url === 'login' || this.url === '' || this.url === 'auto-cadastro') {
-        this.ocultarHeader = false;
-        console.log(this.ocultarHeader);
-      }
-
-      else {
-        this.ocultarHeader = true;
-      }
-
-    });
-
-    this.obterUsuario();
-  }
-
-  obterUsuario() {
-    this.loginService
-      .obterUsuarioPorId(localStorage.getItem('user'))
-      .subscribe(resp => {
-        this.usuario = resp;
-        console.log(this.usuario);
-      })
   }
 
   sair() {

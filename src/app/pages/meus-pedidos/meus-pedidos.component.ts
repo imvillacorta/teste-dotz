@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
+import { LoginService } from "src/app/services/login/login.service";
 
 @Component({
   selector: 'app-meus-pedidos',
@@ -7,9 +10,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MeusPedidosComponent implements OnInit {
 
-  constructor() { }
+  public usuario: any;
+  public endereco: any;
+  public pedidos: any;
+
+  constructor(
+    private loginService: LoginService
+  ) { }
 
   ngOnInit(): void {
+
+    this.obterUsuario();
+  }
+
+  obterUsuario() {
+    this.loginService
+      .obterUsuarioPorId(localStorage.getItem('user'))
+      .subscribe(resp => {
+        this.usuario = resp;
+        this.endereco = resp?.endereco;
+        this.pedidos = resp?.produtos;
+      })
   }
 
 }

@@ -5,7 +5,7 @@
       "nome": "Ivan Villacorta",
       "cpf": "39293316838",
       "email": "ivan_mv23@hotmail.com",
-      "saldo": 99000,
+      "saldo": 8300,
       "endereco": [
         {
           "cep": "02211050",
@@ -21,13 +21,13 @@
         {
           "id": 1,
           "produto": "Monitor",
-          "preco": "1500",
+          "preco": 1500,
           "dataCompra": "2021-05-22T20:56:52.675Z"
         },
         {
           "id": 2,
           "produto": "Mouse",
-          "preco": "200",
+          "preco": 200,
           "dataCompra": "2021-05-22T20:56:52.675Z"
         }
       ]

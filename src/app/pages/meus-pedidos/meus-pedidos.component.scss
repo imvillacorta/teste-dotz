@@ -1,0 +1,13 @@
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    @media (max-width: 768px) {
+        flex-direction: column;
+    }
+}

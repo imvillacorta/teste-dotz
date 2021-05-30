@@ -1,1 +1,46 @@
-<p>meus-pedidos works!</p>
+<app-header [usuario]="usuario?.nome"
+            [saldo]="usuario?.saldo"></app-header>
+
+<div class="container">
+    <div class="container-wrap">
+        <div class="cabecalho mb-2">
+            <div>
+                <h4 class="title">Meus Pedidos</h4>
+                <h6>Gerencie seus pedidos na lista abaixo.</h6>
+            </div>
+            <div>
+                <button type="button"
+                        class="btn btn-primary">
+                    + Resgatar Produtos
+                </button>
+            </div>
+        </div>
+
+        <div class="card mb-3"
+             *ngFor="let pedido of pedidos">
+            <div class="card-header">
+                <div>
+                    {{ pedido.produto }}
+                </div>
+                <div>
+                    Data do Pedido: {{ pedido.dataCompra | date: 'dd/MM/yyyy':'pt' }}
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="card-text">
+                    <div>
+                        <b>Valor:</b> {{pedido.preco}} dotz
+                    </div>
+                    <div>
+                        <b>Endereço:</b> {{ endereco[0].rua }}, {{ endereco[0].numero }} - {{ endereco[0].complemento }}
+                        - {{ endereco[0].bairro }}
+                    </div>
+                    <div class="alert alert-warning p-2 mt-2"
+                         role="alert">
+                        Situação : Pendente
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

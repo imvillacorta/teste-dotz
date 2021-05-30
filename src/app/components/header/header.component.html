@@ -1,17 +1,16 @@
-<div class="header d-flex justify-content-between align-items-center"
-     *ngIf="ocultarHeader">
+<div class="header d-flex justify-content-between align-items-center">
     <div>
         <img src="../../../assets/img/logo-dotz-completo.png"
              alt="Logo">
     </div>
 
     <div class="user d-flex align-items-center">
-        <div class="me-3 text-end">
+        <div class="me-3 text-end dados">
             <div>
-                {{usuario.nome}}
+                {{ usuario }}
             </div>
             <div>
-                Saldo: <b> {{usuario.saldo}}</b> dotz
+                Saldo: <b> {{ saldo }}</b> dotz
             </div>
         </div>
 
@@ -20,12 +19,27 @@
                 <img class="dropdown-toggle"
                      data-bs-toggle="dropdown"
                      aria-expanded="false"
-                     id="dropdownMenuButton2"
+                     id="dropdownusuario"
                      src="../../../assets/img/ico-user.svg"
                      alt="Menu">
+                <img src="../../../assets/img/ico-down.svg"
+                     class="seta"
+                     data-bs-toggle="dropdown">
+
 
                 <ul class="dropdown-menu"
-                    aria-labelledby="dropdownMenuButton2">
+                    aria-labelledby="dropdownusuario">
+                    <li>
+                        <div class="dados-mobile">
+                            <div class="ms-2">
+                                {{ usuario }}
+                            </div>
+                            <div class="ms-2">
+                                Saldo: <b> {{ saldo }}</b> dotz
+                            </div>
+                            <hr class="dropdown-divider">
+                        </div>
+                    </li>
                     <li>
                         <a class="dropdown-item cursor"
                            (click)="pedidos()">Meus Pedidos</a>
