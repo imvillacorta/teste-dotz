@@ -15,4 +15,24 @@ export class ProdutosService {
     return this.http.get<any>(
       `${environment.urlApi}/produtos`);
   }
+
+  obterCateforias() {
+    return this.http.get<any>(
+      `${environment.urlApi}/categorias`);
+  }
+
+  atualizarProduto(produto: any) {
+    return this.http.put<any>(
+      `${environment.urlApi}/produtos/${produto.id}`,
+      {
+        id: produto.id,
+        descricao: produto.descricao,
+        img: produto.img,
+        valor: produto.valor,
+        categoria: produto.categoria,
+        resgatado: true
+      }
+    );
+  }
+
 }

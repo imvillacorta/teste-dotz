@@ -12,7 +12,10 @@ import Swal from 'sweetalert2';
 export class ProdutosComponent implements OnInit {
 
   public usuario: any;
+  public produtosAtualizados: any;
   public produtos: any;
+  public categorias: any;
+  public categoriaSelecionada: any = '';
 
   constructor(
     private loginService: LoginService,
@@ -22,6 +25,7 @@ export class ProdutosComponent implements OnInit {
 
   ngOnInit(): void {
     this.obterUsuario();
+    this.obterCategoriasProdutos();
     this.obterProdutos();
   }
 
@@ -33,19 +37,43 @@ export class ProdutosComponent implements OnInit {
       })
   }
 
+  obterCategoriasProdutos() {
+    this.produtosService
+      .obterCateforias()
+      .subscribe(resp => {
+        this.categorias = resp;
+        console.log(this.categorias);
+      })
+  }
+
   obterProdutos() {
     this.produtosService
       .obterProdutos()
       .subscribe(resp => {
         this.produtos = resp;
+        this.produtos = this.produtos.filter((produtos: any) => {
+          return produtos.resgatado === false
+        })
       })
   }
+
+  // filtrarCategoria() {
+
+  //   if (this.categoriaSelecionada === '') {
+  //     this.obterProdutos();
+  //   }
+
+  //   this.produtos = this.produtos.filter((produtos: any) => {
+  //     return produtos.categoria == this.categoriaSelecionada
+  //   })
+
+  // }
 
   resgatar(produto: any) {
     if (this.usuario.saldo < produto.valor) {
       Swal.fire({
         icon: 'info',
-        title: 'Resgate não pode ser feito',
+        title: 'Ops',
         text: "Infelizmente você não tem saldo suficiente para realizar este resgate.",
         confirmButtonText: 'ENTENDI',
         confirmButtonColor: '#f29433',
@@ -74,8 +102,6 @@ export class ProdutosComponent implements OnInit {
         preco: produto.valor,
         dataCompra: new Date()
       })
-
-      console.log('push', produtos);
 
       //MONTA OBJETO PARA VINCULAR NOVO PRODUTO AO USUARIO LOGADO
       let infoUsuario: any;
@@ -115,14 +141,21 @@ export class ProdutosComponent implements OnInit {
         }
       }).then((result) => {
         if (result.dismiss) {
-          console.log('canceler');
         }
         else {
-          //AO CONFIRMAR ENVIA PARA O SERVIÇO OS DADOS DO USUARIO 
-          //COM O NOVO PRODUTO RESGATADO
+          /*
+          AO CONFIRMAR ATUALIZA A SITUAÇÃO DO PRODUTO E 
+          ATUALIZA OS DADOS DO USUARIO COMO O NOVO PRODUTO
+          */
           this.usuarioService
             .atualizar(this.usuario.id, infoUsuario)
             .subscribe(resp => {
+
+              this.produtosService
+                .atualizarProduto(produto)
+                .subscribe(resp => {
+                })
+
               Swal.fire({
                 icon: 'success',
                 title: 'Produto Resgatado',

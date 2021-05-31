@@ -5,42 +5,60 @@
       "descricao": "Monitor Samsung Led 27 Polegadas",
       "img": "assets/img/monitor.png",
       "valor": 1500,
-      "setor": "informatica"
+      "categoria": "informatica",
+      "resgatado": true
     },
     {
       "id": 2,
       "descricao": "Mouse Optico com fio",
       "img": "assets/img/mouse.png",
       "valor": 200,
-      "setor": "informatica"
+      "categoria": "informatica",
+      "resgatado": false
     },
     {
       "id": 3,
       "descricao": "Notebook Gamer Dell",
       "img": "assets/img/notebook.png",
       "valor": 5000,
-      "setor": "informatica"
+      "categoria": "informatica",
+      "resgatado": false
     },
     {
       "id": 4,
       "descricao": "Smart TV Samsung 55 Polegadas",
       "img": "assets/img/tv.png",
       "valor": 10000,
-      "setor": "eletros"
+      "categoria": "eletronico",
+      "resgatado": false
     },
     {
       "id": 5,
       "descricao": "Teclado Mecanico RGB",
       "img": "assets/img/teclado.png",
       "valor": 1000,
-      "setor": "informatica"
+      "categoria": "informatica",
+      "resgatado": false
     },
     {
       "id": 6,
       "descricao": "Home Theater LG LHB645N Full HD com Blu-Ray 3D 1000W Bluetooth 5.1",
       "img": "assets/img/home-theater.png",
       "valor": 4000,
-      "setor": "eletros"
+      "categoria": "eletronico",
+      "resgatado": false
+    }
+  ],
+  "categorias": [
+    {
+      "id": 1,
+      "descricao": "Eletrônicos",
+      "categoria": "eletronico"
+    },
+    {
+      "id": 2,
+      "descricao": "Informática",
+      "categoria": "informatica"
     }
   ],
   "usuarios": [
@@ -49,7 +67,7 @@
       "nome": "Ivan Villacorta",
       "cpf": "39293316838",
       "email": "ivan_mv23@hotmail.com",
-      "saldo": 8100,
+      "saldo": 8500,
       "endereco": [
         {
           "cep": "02211050",
@@ -67,16 +85,11 @@
           "produto": "Monitor Samsung Led 27 Polegadas",
           "preco": 1500,
           "dataCompra": "2021-05-22T20:56:52.675Z"
-        },
-        {
-          "id": 2,
-          "produto": "Mouse Optico com fio",
-          "preco": 200,
-          "dataCompra": "2021-05-22T20:56:52.675Z"
         }
       ]
     },
     {
+      "id": 2,
       "nome": "Alberto de Lima",
       "cpf": "39293316845",
       "email": "alberto@gmail.com",
@@ -92,10 +105,10 @@
           "estado": "SP"
         }
       ],
-      "produtos": [],
-      "id": 2
+      "produtos": []
     },
     {
+      "id": 3,
       "nome": "Geovana Zanco",
       "cpf": "39293316831",
       "email": "geovana@hotmail.com",
@@ -111,8 +124,7 @@
           "estado": "SP"
         }
       ],
-      "produtos": [],
-      "id": 3
+      "produtos": []
     }
   ]
 }
