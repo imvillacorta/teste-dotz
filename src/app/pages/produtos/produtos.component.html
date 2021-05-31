@@ -1,14 +1,14 @@
 <app-header [usuario]="usuario?.nome"
             [saldo]="usuario?.saldo"></app-header>
 
-<div class="container">
+<div class="container pb-5">
     <div class="container-wrap">
         <div class="mb-3">
             <h4 class="title">Produtos para Resgate</h4>
             <h6>Escolha os produtos que deseja resgastar.</h6>
         </div>
 
-        <!-- <div class="row mb-3">
+        <div class="row mb-3">
             <div class="col-md-4 col-sm-12">
                 <label class="form-label"
                        for="categoria">Categoria</label>
@@ -25,7 +25,7 @@
                     </option>
                 </select>
             </div>
-        </div> -->
+        </div>
 
         <div class="row">
             <div class="col-md-4 col-sm-12 mb-3"
@@ -39,11 +39,17 @@
                         {{ produto.descricao }}
                     </div>
                     <div class="preco mt-4">
-                        DZ {{ produto.valor }}
+                        DZ {{ produto.valor | mask: 'separator':'.' }}
                     </div>
                     <div class="comprar cursor"
-                         (click)="resgatar(produto)">
+                         (click)="resgatar(produto)"
+                         *ngIf="!produto.resgatado">
                         Resgatar
+                    </div>
+
+                    <div class="produto-resgatado"
+                         *ngIf="produto.resgatado">
+                        Produto Resgatado
                     </div>
                 </div>
             </div>

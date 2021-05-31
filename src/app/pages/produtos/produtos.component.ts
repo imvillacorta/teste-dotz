@@ -3,6 +3,7 @@ import { LoginService } from "src/app/services/login/login.service";
 import { UsuarioService } from "src/app/services/usuario/usuario.service";
 import { ProdutosService } from "src/app/services/produtos/produtos.service";
 import Swal from 'sweetalert2';
+import { createOfflineCompileUrlResolver } from '@angular/compiler';
 
 @Component({
   selector: 'app-produtos',
@@ -42,7 +43,6 @@ export class ProdutosComponent implements OnInit {
       .obterCateforias()
       .subscribe(resp => {
         this.categorias = resp;
-        console.log(this.categorias);
       })
   }
 
@@ -51,23 +51,41 @@ export class ProdutosComponent implements OnInit {
       .obterProdutos()
       .subscribe(resp => {
         this.produtos = resp;
-        this.produtos = this.produtos.filter((produtos: any) => {
-          return produtos.resgatado === false
-        })
+        this.loginService
+          .obterUsuarioPorId(localStorage.getItem('user'))
+          .subscribe((dadosUsuario: any) => {
+            this.produtos.map((todosProdutos: any) => {
+              dadosUsuario.produtos.map((produtoResgatado: any) => {
+                if (todosProdutos.id === produtoResgatado.id) {
+                  todosProdutos.resgatado = true;
+                }
+              })
+            })
+          })
       })
   }
 
-  // filtrarCategoria() {
+  filtrarCategoria() {
+    this.produtos = this.produtos.filter((produtos: any) => {
+      return produtos.categoria == this.categoriaSelecionada
+    })
 
-  //   if (this.categoriaSelecionada === '') {
-  //     this.obterProdutos();
-  //   }
+    if (!this.produtos.length) {
+      this.produtosService
+        .obterProdutos()
+        .subscribe(resp => {
+          this.produtos = resp;
+          this.produtos = this.produtos.filter((produtos: any) => {
+            return produtos.categoria == this.categoriaSelecionada
+          })
+        })
+    }
 
-  //   this.produtos = this.produtos.filter((produtos: any) => {
-  //     return produtos.categoria == this.categoriaSelecionada
-  //   })
+    if (this.categoriaSelecionada === '') {
+      this.obterProdutos();
+    }
 
-  // }
+  }
 
   resgatar(produto: any) {
     if (this.usuario.saldo < produto.valor) {
@@ -89,7 +107,6 @@ export class ProdutosComponent implements OnInit {
     }
 
     else {
-
       //RECUPERA PRODUTOS RESGATADOS
       let produtos = this.usuario.produtos.map((produtos: any) => {
         return produtos
@@ -150,11 +167,6 @@ export class ProdutosComponent implements OnInit {
           this.usuarioService
             .atualizar(this.usuario.id, infoUsuario)
             .subscribe(resp => {
-
-              this.produtosService
-                .atualizarProduto(produto)
-                .subscribe(resp => {
-                })
 
               Swal.fire({
                 icon: 'success',

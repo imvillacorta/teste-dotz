@@ -1,7 +1,7 @@
 <app-header [usuario]="usuario?.nome"
             [saldo]="usuario?.saldo"></app-header>
 
-<div class="container">
+<div class="container pb-5">
     <div class="container-wrap">
         <div class="cabecalho mb-2">
             <div>
@@ -17,6 +17,12 @@
             </div>
         </div>
 
+        <div class="alert alert-info"
+             *ngIf="!pedidos.length"
+             role="alert">
+            Você não tem nenhum pedido, aproveite seu saldo e resgate produtos!
+        </div>
+
         <div class="card mb-3"
              *ngFor="let pedido of pedidos">
             <div class="card-header">
@@ -30,7 +36,7 @@
             <div class="card-body">
                 <div class="card-text">
                     <div>
-                        <b>Valor:</b> {{pedido.preco}} dotz
+                        <b>Valor:</b> {{ pedido.preco | mask: 'separator':'.' }} DZ
                     </div>
                     <div>
                         <b>Endereço de Entrega:</b> {{ endereco[0].rua }}, {{ endereco[0].numero }} - {{

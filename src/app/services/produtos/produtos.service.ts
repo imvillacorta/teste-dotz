@@ -21,18 +21,4 @@ export class ProdutosService {
       `${environment.urlApi}/categorias`);
   }
 
-  atualizarProduto(produto: any) {
-    return this.http.put<any>(
-      `${environment.urlApi}/produtos/${produto.id}`,
-      {
-        id: produto.id,
-        descricao: produto.descricao,
-        img: produto.img,
-        valor: produto.valor,
-        categoria: produto.categoria,
-        resgatado: true
-      }
-    );
-  }
-
 }

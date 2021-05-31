@@ -10,8 +10,8 @@ export class MeusPedidosComponent implements OnInit {
 
   public usuario: any;
   public endereco: any;
-  public pedidos: any;
-
+  public pedidos: any = [];
+  public info: any;
   constructor(
     private loginService: LoginService
   ) { }
@@ -28,6 +28,7 @@ export class MeusPedidosComponent implements OnInit {
         this.endereco = resp?.endereco;
         this.pedidos = resp?.produtos;
       })
+
   }
 
 }

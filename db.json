@@ -5,48 +5,42 @@
       "descricao": "Monitor Samsung Led 27 Polegadas",
       "img": "assets/img/monitor.png",
       "valor": 1500,
-      "categoria": "informatica",
-      "resgatado": true
+      "categoria": "informatica"
     },
     {
       "id": 2,
       "descricao": "Mouse Optico com fio",
       "img": "assets/img/mouse.png",
       "valor": 200,
-      "categoria": "informatica",
-      "resgatado": false
+      "categoria": "informatica"
     },
     {
       "id": 3,
       "descricao": "Notebook Gamer Dell",
       "img": "assets/img/notebook.png",
       "valor": 5000,
-      "categoria": "informatica",
-      "resgatado": false
+      "categoria": "informatica"
     },
     {
       "id": 4,
       "descricao": "Smart TV Samsung 55 Polegadas",
       "img": "assets/img/tv.png",
       "valor": 10000,
-      "categoria": "eletronico",
-      "resgatado": false
+      "categoria": "eletronico"
     },
     {
       "id": 5,
       "descricao": "Teclado Mecanico RGB",
       "img": "assets/img/teclado.png",
       "valor": 1000,
-      "categoria": "informatica",
-      "resgatado": false
+      "categoria": "informatica"
     },
     {
       "id": 6,
       "descricao": "Home Theater LG LHB645N Full HD com Blu-Ray 3D 1000W Bluetooth 5.1",
       "img": "assets/img/home-theater.png",
       "valor": 4000,
-      "categoria": "eletronico",
-      "resgatado": false
+      "categoria": "eletronico"
     }
   ],
   "categorias": [
@@ -67,7 +61,7 @@
       "nome": "Ivan Villacorta",
       "cpf": "39293316838",
       "email": "ivan_mv23@hotmail.com",
-      "saldo": 8500,
+      "saldo": 2300,
       "endereco": [
         {
           "cep": "02211050",
@@ -85,6 +79,24 @@
           "produto": "Monitor Samsung Led 27 Polegadas",
           "preco": 1500,
           "dataCompra": "2021-05-22T20:56:52.675Z"
+        },
+        {
+          "id": 2,
+          "produto": "Mouse Optico com fio",
+          "preco": 200,
+          "dataCompra": "2021-05-31T01:26:37.186Z"
+        },
+        {
+          "id": 3,
+          "produto": "Notebook Gamer Dell",
+          "preco": 5000,
+          "dataCompra": "2021-05-31T02:45:27.015Z"
+        },
+        {
+          "id": 5,
+          "produto": "Teclado Mecanico RGB",
+          "preco": 1000,
+          "dataCompra": "2021-05-31T03:12:45.544Z"
         }
       ]
     },
@@ -112,7 +124,7 @@
       "nome": "Geovana Zanco",
       "cpf": "39293316831",
       "email": "geovana@hotmail.com",
-      "saldo": 10000,
+      "saldo": 4000,
       "endereco": [
         {
           "cep": "02211456",
@@ -124,7 +136,20 @@
           "estado": "SP"
         }
       ],
-      "produtos": []
+      "produtos": [
+        {
+          "id": 5,
+          "produto": "Teclado Mecanico RGB",
+          "preco": 1000,
+          "dataCompra": "2021-05-31T01:34:49.172Z"
+        },
+        {
+          "id": 3,
+          "produto": "Notebook Gamer Dell",
+          "preco": 5000,
+          "dataCompra": "2021-05-31T02:16:37.338Z"
+        }
+      ]
     }
   ]
 }

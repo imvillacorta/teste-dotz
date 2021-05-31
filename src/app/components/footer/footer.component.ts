@@ -25,7 +25,6 @@ export class FooterComponent implements OnInit {
 
       if (this.url === 'login' || this.url === '' || this.url === 'auto-cadastro') {
         this.ocultarFooter = false;
-        console.log(this.ocultarFooter);
       }
 
       else {
