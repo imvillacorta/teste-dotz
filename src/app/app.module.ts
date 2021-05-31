@@ -16,6 +16,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { AutoCadastroComponent } from './pages/auto-cadastro/auto-cadastro.component';
 import { MeusPedidosComponent } from './pages/meus-pedidos/meus-pedidos.component';
 import { ProdutosComponent } from './pages/produtos/produtos.component';
+import { AuthGuard } from './guards/auth-guard';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,7 @@ import { ProdutosComponent } from './pages/produtos/produtos.component';
     ComponentsModule,
     NgxMaskModule.forRoot()
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
