@@ -1,27 +1,46 @@
-# TesteDotz
+# Desafio Front End [Dotz]
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.1.
+Este projeto foi gerado com as seguintes tecnologias.
 
-## Development server
+![Tecnologias](src/assets/img/tecnologias.png)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Aplicação web que aborda o "Programa de Fidelidade Dotz".
 
-## Code scaffolding
+O projeto consiste em realizar um auto cadastro para que o mesmo possa ter acesso a aplicação e assim poder realizar o login com os dados fornecidos, uma vez logado o usuário poderá ter acesso aos pedidos resgatados e realizar novos resgates.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Estou aberto a sugestões e melhorias.
 
-## Build
+## Pré requisitos
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- Instalar [NodeJS](https://nodejs.org/en/)
+- Instalar [Angular](https://angular.io/guide/setup-local)
+- Instalar [JSON Server](https://www.linkedin.com/pulse/apis-fakes-com-json-server-ivan-villacorta/) - o link encaminha para um artigo que escrevi explicando um pouco mais da instalação e como podemos usar o JSON Server.
 
-## Running unit tests
+## Executando o projeto
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### - Instalando as dependências
 
-## Running end-to-end tests
+Após clonar o projeto é preciso instalar as dependências, o projeto final esta na branch 'main', use o seguinte comando para instalar as dependências:
+```
+npm i
+```
+### - Executando as API's
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+As API`s foram criadas usando JSON Server e devem ser executadas durante todo o processo em que a aplicação estiver rodando.
+Para isso abra o projeto no terminal de sua preferência e rode o seguinte comando:
+```
+json-server --watch db.json
+```
 
-## Further help
+### - Executando o front end
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Para rodar a aplicação use o seguinte comando:
+```
+ng serve
+```
+
+Feito isso navegue para http://localhost:4200
+
+![Build](https://i2.wp.com/perdidas.com.br/wp-content/uploads/2018/09/elmo-fogo.gif?resize=540%2C368)
+
+Pronto, a aplicação vai estar rodando, faça seu cadastro para conferir o programa de fidelidade Dotz, espero ter alcançado o objeto do desafio, vou ficar feliz em receber o feedback, até mais.
